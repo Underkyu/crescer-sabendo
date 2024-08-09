@@ -36,4 +36,5 @@ class ProfessorController
         Session::put('professor', $professor);
         return redirect('/ong/account');
     }
+        
 }

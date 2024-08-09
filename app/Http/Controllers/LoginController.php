@@ -18,11 +18,12 @@ class LoginController
     $senha = $req->input('Senha');
 
     // Verificar se o usuário é um professor, ONG ou aluno
-    $professor = Professor::where('Email', $email)->first();
+    $professor = Professor::where('email', $email)->first();
     $ong = Ong::where('Email', $email)->first();
     $aluno = Aluno::where('Email', $email)->first();
 
     if ($professor !== null && Hash::check($senha, $professor->senha)) {
+        
         // Iniciar sessão para o professor
         Session::put('professor', $professor);
         return redirect('/ong/account');
