@@ -29,7 +29,7 @@
                 <img src="{{ asset('images/logo.png') }}" alt="Logo Crescer Sabendo" class="h-16">
             </div>
             <h2 class="text-center text-3xl font-bold mb-6">Seja bem-vindo!!</h2>
-            <form method="POST" action="/createp">
+            <form method="POST" action="/createprofessor">
                 @csrf
                 <div class="mb-4">
                     <label class="block text-gray-700">Nome</label>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">CPF</label>
-                    <input type="text" required name="CPF" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="text" required maxlength="14" name="CPF" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Nascimento</label>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Telefone</label>
-                    <input type="text" required name="Telefone" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="text" required  maxlength="13" name="Telefone" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Informe sua formação</label>
@@ -66,10 +66,10 @@
                 <button type="submit" class="w-full bg-purple-900 text-white p-2 rounded-xl text-lg font-semibold hover:bg-purple-700">Cadastrar-se</button>
             </form>
             @if ($errors->any())
-            <div class="alert alert-danger">
+            <div class="mt-4">
                 <ul>
                     @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
+                    <li class="text-red-500">{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>

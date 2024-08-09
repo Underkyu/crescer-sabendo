@@ -25,7 +25,7 @@
             <nav id="navbar" class="hidden  md:flex items-center space-x-12 gap-14">
                 <a href="#" class="text-purple-700  text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3 ">Home</a>
                 <a href="#aboutus" class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">Sobre nós</a>
-                <a href="#" class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">ONG's</a>
+                <a href="/ongs" class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">ONG's</a>
                 <a href="#" class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">Parcerias</a>
                 <a href="#contactus" class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">Fale Conosco</a>
             </nav>

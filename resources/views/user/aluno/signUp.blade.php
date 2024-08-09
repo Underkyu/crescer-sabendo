@@ -29,7 +29,7 @@
                 <img src="{{ asset('images/logo.png') }}" alt="Logo Crescer Sabendo" class="h-16">
             </div>
             <h2 class="text-center text-3xl font-bold mb-6">Seja bem-vindo!!</h2>
-            <form action="/register" method="POST">
+            <form action="/createaluno" method="POST">
                 @csrf
                 <div class="mb-4">
                     <label class="block text-gray-700">Nome do aluno</label>
@@ -96,6 +96,15 @@
                 <button type="submit" class="w-full bg-purple-900 text-white p-2 rounded-xl text-lg font-semibold hover:bg-purple-700"><a href="">Cadastrar-se</a></button>
             </form>
         </div>
+        @if ($errors->any())
+            <div class="mt-4">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li class="text-red-500">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
         <img src="{{ asset('images/signInBack.png') }}" alt="Background" class="absolute inset-0 w-full h-full  z-0">
     </div>
 </body>

@@ -92,6 +92,15 @@
                 <button type="submit" class="w-full bg-purple-900 text-white p-2 rounded-xl text-lg font-semibold hover:bg-purple-700"><a href="/ong/account">Cadastrar-se</a></button>
             </form>
         </div>
+        @if ($errors->any())
+            <div class="mt-4">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li class="text-red-500">{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
         <img src="{{ asset('images/signInBack.png') }}" alt="Background" class="absolute inset-0 w-full h-full  z-0">
     </div>
 </body>

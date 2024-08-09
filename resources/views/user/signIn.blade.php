@@ -69,10 +69,10 @@
                 Não tem conta? <a href="{{ url('/signup') }}" class="font-bold">Cadastre-se</a>
             </div>
             @if ($errors->any())
-            <div class="alert alert-danger">
+            <div class="mt-4">
                 <ul>
                     @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
+                    <li class="text-red-500">{{ $error }}</li>
                     @endforeach
                 </ul>
             </div>

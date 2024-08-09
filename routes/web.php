@@ -14,6 +14,9 @@ Route::get('/', function () {
 Route::get('/donates', function () {
     return view('user/doacoes');
 });
+Route::get('/ongs', function () {
+    return view('user/ongs');
+});
 
 
 // Registro, Login e Logout
@@ -51,13 +54,15 @@ Route::get('/ong/volunteer', function () {
 Route::get('/aluno/signup', function () {
     return view('user/aluno/signUp');
 });
+Route::post('/createaluno', [AlunoController::class, 'create']);
 
 
 // Professor
 Route::get('/prof/signup', function () {
     return view('user/prof/signUp');
 });
-Route::post('/createp', [ProfessorController::class, 'create']);
+Route::post('/createprofessor', [ProfessorController::class, 'create']);
+
 
 // Admin
 Route::get('/admin', function () {

@@ -29,18 +29,18 @@ class LoginController
         return redirect('/ong/account');
     }
 
-   /*/ if ($ong !== null && Hash::check($senha, $ong->senha)) {
+   if ($ong !== null && Hash::check($senha, $ong->senha)) {
         // Iniciar sessão para a ONG
-        Session::put('Token', $ong);
+        Session::put('ong', $ong);
         return redirect('/ong/account');
     }
 
     if ($aluno !== null && Hash::check($senha, $aluno->senha)) {
         // Iniciar sessão para o aluno
-        Session::put('Token', $aluno);
-        return redirect('/aluno/dashboard');
+        Session::put('aluno', $aluno);
+        return redirect('/ong/account');
     }
-*/
+
     // Se nenhuma das condições for atendida
     return redirect()->back()->withInput()->withErrors(['email' => 'Credenciais inválidas']);
     }

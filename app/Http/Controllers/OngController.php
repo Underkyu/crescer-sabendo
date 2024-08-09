@@ -4,61 +4,30 @@ namespace App\Http\Controllers;
 
 use App\Models\Ong;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;;
 
 class OngController
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function create(Request $req)
     {
-    }
+        $senha = $req->input('Senha');
+        $c_senha = $req->input('C_Senha');
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
+        $ong = new Ong();
+        $ong->Nome = $req->input('Nome');
+        $ong->CPF = $req->input('CPF');
+        $ong->Nascimento = $req->input('Nascimento');
+        $ong->Telefone = $req->input('Telefone');
+        $ong->Formacao = $req->input('Formacao');
+        $ong->Email = $req->input('Email');
+        $ong->Senha = Hash::make($req->input('Senha'));
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+        if ($c_senha !== $senha) return redirect()->back()->withInput()->withErrors(['senha' => 'senhas não coincidem']);
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Ong $ong)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Ong $ong)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Ong $ong)
-    {
-        //
+        $ong->save();
+        Session::put('ong', $ong);
+        return redirect('/ong/account');
     }
 }

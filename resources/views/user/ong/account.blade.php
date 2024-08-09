@@ -93,11 +93,17 @@
             <div class="flex flex-col ml-20 -mt-20">
                 <img src="https://vojislavd.com/ta-template-demo/assets/img/profile.jpg" class="w-40 border-4 border-white rounded-full">
                 <div class="flex items-start space-x-2 mt-2">
+                    <p class="text-2xl">{{$professor->Nome}}</p>
                     <p class="text-2xl">{{$professor->nome}}</p>
+
                 </div>
 
+                <p class="text-xl">{{$professor->Email}}</p>
+                <p class=" text-xl">{{$professor->Telefone}}</p>
                 <p class="text-xl">{{$professor->email}}</p>
                 <p class=" text-xl">{{$professor->telefone}}</p>
+
+         
             </div>
         </div>
 </body>
