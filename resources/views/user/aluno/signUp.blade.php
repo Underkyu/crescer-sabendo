@@ -33,78 +33,78 @@
                 @csrf
                 <div class="mb-4">
                     <label class="block text-gray-700">Nome do aluno</label>
-                    <input type="text" name="nome_aluno" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="text" required name="nome_aluno" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">CPF do aluno</label>
-                    <input type="text" name="cpf_aluno" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="text" required name="cpf_aluno" maxlength="14" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Data de nascimento</label>
-                    <input type="date" name="aniversario_aluno" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="date" required name="aniversario_aluno" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Nome do responsável</label>
-                    <input type="text" name="nome_resp" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="text" required name="nome_resp" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">CPF do responsável</label>
-                    <input type="text" name="cpf_resp" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="text" required name="cpf_resp" maxlength="14" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Data de nascimento do responsável</label>
-                    <input type="date" name="aniversario_resp" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="date" required name="aniversario_resp" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Telefone</label>
-                    <input type="text" name="telefone" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="text" required name="telefone" maxlength="15" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Endereço</label>
-                    <input type="text" name="endereco" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="text" required name="endereco" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">CEP</label>
-                    <input type="text" name="cep" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="text" required name="cep" maxlength="10" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="grid grid-cols-2 gap-5 mb-4 ">
                     <div>
                         <label class="block text-gray-700">Estado</label>
-                        <input type="text" name="estado" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                        <input type="text" required name="estado" maxlength="2" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                     </div>
                     <div>
                         <label class="block text-gray-700">Cidade</label>
-                        <input type="text" name="cidade" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                        <input type="text" required name="cidade" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                     </div>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Complemento</label>
-                    <input type="text" name="complemento" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="text" required name="complemento" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Email</label>
-                    <input type="text" name="email" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="text" required name="email" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Senha</label>
-                    <input type="text" name="senha" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="text" required name="senha" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Confirmar Senha</label>
-                    <input type="text" name="c_senha" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="text" required name="c_senha" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
-                <button type="submit" class="w-full bg-purple-900 text-white p-2 rounded-xl text-lg font-semibold hover:bg-purple-700"><a href="">Cadastrar-se</a></button>
+                <button type="submit" class="w-full bg-purple-900 text-white p-2 rounded-xl text-lg font-semibold hover:bg-purple-700">Cadastrar-se</button>
             </form>
         </div>
         @if ($errors->any())
-            <div class="mt-4">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li class="text-red-500">{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
+        <div class="mt-4">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li class="text-red-500">{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
         <img src="{{ asset('images/signInBack.png') }}" alt="Background" class="absolute inset-0 w-full h-full  z-0">
     </div>
 </body>

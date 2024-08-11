@@ -15,10 +15,10 @@ return new class extends Migration
             $table->increments('RM');
             $table->string('Nome');
             $table->string('Email');
-            $table->string('CPF', 11);
+            $table->string('CPF', 14);
             $table->date('Nascimento')->nullable();
-            $table->unsignedInteger('id_responsavel')->nullable();
-            $table->foreign('id_responsavel')->references('id_responsavel')->on('responsavels');
+            $table->unsignedInteger('Id_Responsavel')->nullable();
+            $table->foreign('Id_Responsavel')->references('Id_Responsavel')->on('responsavels');
             $table->timestamps();
         });
     }

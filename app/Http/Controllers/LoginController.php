@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Login;
 use App\Models\Professor;
 use App\Models\Ong;
+use App\Models\Responsavel;
 use App\Models\Aluno;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -13,39 +14,47 @@ use Illuminate\Http\Request;
 
 class LoginController
 {
-    public function login(Request $req){
-    $email = $req->input('Email');
-    $senha = $req->input('Senha');
+    public function login(Request $req)
+    {
+        $email = $req->input('Email');
+        $senha = $req->input('Senha');
 
-    // Verificar se o usuário é um professor, ONG ou aluno
-    $professor = Professor::where('email', $email)->first();
-    $ong = Ong::where('Email', $email)->first();
-    $aluno = Aluno::where('Email', $email)->first();
+        // Verificar se o usuário é um professor, ONG ou aluno
+        $professor = Professor::where('Email', $email)->first();
+        $ong = Ong::where('Email', $email)->first();
+        $responsavel = Responsavel::where('Email', $email)->first();
 
-    if ($professor !== null && Hash::check($senha, $professor->senha)) {
-        
-        // Iniciar sessão para o professor
-        Session::put('professor', $professor);
-        return redirect('/ong/account');
-    }
+        echo $professor;
+        if ($professor !== null && Hash::check($senha, $professor->Senha)) {
 
-   if ($ong !== null && Hash::check($senha, $ong->senha)) {
-        // Iniciar sessão para a ONG
-        Session::put('ong', $ong);
-        return redirect('/ong/account');
-    }
+            // Iniciar sessão para o professor
+            Session::put('professor', $professor);
+            echo $professor;
+            return redirect('/ong/account');
+        }
 
-    if ($aluno !== null && Hash::check($senha, $aluno->senha)) {
-        // Iniciar sessão para o aluno
-        Session::put('aluno', $aluno);
-        return redirect('/ong/account');
-    }
+        if ($ong !== null && Hash::check($senha, $ong->Senha)) {
 
-    // Se nenhuma das condições for atendida
-    return redirect()->back()->withInput()->withErrors(['email' => 'Credenciais inválidas']);
+            // Iniciar sessão para a ONG
+            Session::put('ong', $ong);
+            return redirect('/ong/account');
+        }
+
+        if ($responsavel !== null && Hash::check($senha, $responsavel->Senha)) {
+
+            // Iniciar sessão para o responsavel
+            $aluno = Aluno::where('Email', $email)->first();
+            Session::put('responsavel', $responsavel);
+            Session::put('aluno', $aluno);
+            return redirect('/teste');
+        }
+
+        // Se nenhuma das condições for atendida
+        return redirect()->back()->withInput()->withErrors(['email' => 'Credenciais inválidas']);
     }
     public function logout()
     {
+        Session::flush();
         Auth::logout();
         return redirect('/');
     }

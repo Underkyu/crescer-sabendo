@@ -12,16 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('vaga_voluntarios', function (Blueprint $table) {
-            $table->increments('id_vaga');
-            $table->string('nomearea')->nullable();
+            $table->increments('Id_Vaga');
+            $table->string('Nomearea')->nullable();
             $table->string('Telefone', 15)->nullable();
-            $table->string('email')->nullable();
-            $table->string('cidade')->nullable();
-            $table->text('sobre')->nullable();
-            $table->string('dias')->nullable();
-            $table->time('horario')->nullable();
-            $table->unsignedInteger('id_curso')->nullable();
-            $table->foreign('id_curso')->references('id_curso')->on('cursos');
+            $table->string('Email')->nullable();
+            $table->string('Cidade')->nullable();
+            $table->text('Sobre')->nullable();
+            $table->string('Dias')->nullable();
+            $table->time('Horario')->nullable();
+            $table->unsignedInteger('Id_Curso')->nullable();
+            $table->foreign('Id_Curso')->references('Id_Curso')->on('cursos');
             $table->timestamps();
         });
     }

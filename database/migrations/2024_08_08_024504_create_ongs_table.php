@@ -12,24 +12,24 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ongs', function (Blueprint $table) {
-            $table->increments('id_ong');
-            $table->string('nome');
-            $table->string('cnpj', 18)->nullable();
-            $table->string('responsavel')->nullable();
-            $table->string('cpf', 11)->nullable();
+            $table->increments('Id_Ong');
+            $table->string('Nome');
+            $table->string('CNPJ', 18)->nullable();
+            $table->string('Responsavel')->nullable();
+            $table->string('CPF', 11)->nullable();
             $table->string('Endereco')->nullable();
-            $table->string('cep', 10)->nullable();
-            $table->string('estado', 2)->nullable();
-            $table->string('cidade')->nullable();
-            $table->string('complemento')->nullable();
+            $table->string('CEP', 10)->nullable();
+            $table->string('Estado', 2)->nullable();
+            $table->string('Cidade')->nullable();
+            $table->string('Complemento')->nullable();
             $table->string('Telefone', 15)->nullable();
-            $table->text('linkdoacao')->nullable();
-            $table->text('sobre')->nullable();
-            $table->string('email')->nullable();
-            $table->string('senha')->nullable();
-            $table->unsignedInteger('id_voluntario')->nullable();
-            $table->unsignedInteger('id_curso')->nullable();
-            $table->foreign('id_curso')->references('id_curso')->on('cursos');
+            $table->text('Linkdoacao')->nullable();
+            $table->text('Sobre')->nullable();
+            $table->string('Email')->nullable();
+            $table->string('Senha')->nullable();
+            $table->unsignedInteger('Id_Voluntario')->nullable();
+            $table->unsignedInteger('Id_Curso')->nullable();
+            $table->foreign('Id_Curso')->references('Id_Curso')->on('cursos');
             $table->timestamps();
         });
     }

@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('logins', function (Blueprint $table) {
-            $table->increments('id_login');
-            $table->string('email');
-            $table->string('senha');
+            $table->increments('Id_Login');
+            $table->string('Email');
+            $table->string('Senha');
             $table->timestamps();
         });
     }

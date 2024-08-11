@@ -12,15 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cursos', function (Blueprint $table) {
-            $table->increments('id_curso');
-            $table->string('nome');
-            $table->text('sobre')->nullable();
-            $table->time('horario')->nullable();
-            $table->string('dias')->nullable();
-            $table->unsignedInteger('id_professor')->nullable();
-            $table->binary('foto')->nullable();
-            $table->text('itens_aula')->nullable();
-            $table->foreign('id_professor')->references('id_professor')->on('professores');
+            $table->increments('Id_Curso');
+            $table->string('Nome');
+            $table->text('Sobre')->nullable();
+            $table->time('Horario')->nullable();
+            $table->string('Dias')->nullable();
+            $table->unsignedInteger('Id_Professor')->nullable();
+            $table->binary('Foto')->nullable();
+            $table->text('Itens_Aula')->nullable();
+            $table->foreign('Id_Professor')->references('Id_Professor')->on('professores');
             $table->timestamps();
         });
     }

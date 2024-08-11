@@ -17,7 +17,7 @@ class ProfessorController
      * Show the form for creating a new resource.
      */
     public function create(Request $req)
-    {   
+    {
         $senha = $req->input('Senha');
         $c_senha = $req->input('C_Senha');
         $validator = Validator::make($req->all(), [
@@ -45,7 +45,7 @@ class ProfessorController
 
         if ($validator->fails()) return redirect()->back()->withErrors($validator)->withInput();
 
-        
+
         $professor = new Professor();
         $professor->Nome = $req->input('Nome');
         $professor->CPF = $req->input('CPF');
@@ -56,11 +56,10 @@ class ProfessorController
         $professor->Senha = Hash::make($req->input('Senha'));
 
         if ($c_senha !== $senha) return redirect()->back()->withInput()->withErrors(['senha' => 'senhas não coincidem']);
-        
+
 
         $professor->save();
-            
-        return redirect('/prof/account');   
+
+        return redirect('/ong/account');
     }
-        
 }

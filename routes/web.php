@@ -62,7 +62,9 @@ Route::get('/prof/signup', function () {
     return view('user/prof/signUp');
 });
 Route::post('/createprofessor', [ProfessorController::class, 'create']);
-
+Route::get('/teste', function () {
+    return view('teste');
+});
 
 // Admin
 Route::get('/admin', function () {
