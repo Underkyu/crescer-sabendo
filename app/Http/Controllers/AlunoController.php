@@ -91,7 +91,6 @@ class AlunoController
 
         Session::put('aluno', $aluno);
         Session::put('responsavel', $responsavel);
-
-        return redirect('/teste');
+        return redirect('/aluno/account');
     }
 }

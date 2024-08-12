@@ -5,6 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Session;
+
 
 class Auth
 {
@@ -15,10 +17,12 @@ class Auth
      */
     public function handle(Request $req, Closure $next): Response
     {
-        $token = $req->cookie('Token');
-        if ($token === null) {
-            return redirect('/');
-        }
-        return $next($req);
+        $professor = Session::get('professor');
+        $responsavel = Session::get('responsavel');
+        $aluno = Session::get('aluno');
+
+        if ($professor || $responsavel || $aluno) return $next($req);
+
+        return redirect()->back();
     }
 }

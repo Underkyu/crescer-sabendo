@@ -38,16 +38,16 @@ Route::get('/ong/signup', function () {
 });
 Route::get('/ong/account', function () {
     return view('user/ong/account');
-});
+})->middleware(\App\Http\Middleware\Auth::class);
 Route::get('/ong/courses', function () {
     return view('user/ong/courses');
-});
+})->middleware(\App\Http\Middleware\Auth::class);
 Route::get('/ong/mural', function () {
     return view('user/ong/mural');
-});
+})->middleware(\App\Http\Middleware\Auth::class);
 Route::get('/ong/volunteer', function () {
     return view('user/ong/volunteer');
-});
+})->middleware(\App\Http\Middleware\Auth::class);
 
 
 // Aluno
@@ -55,6 +55,18 @@ Route::get('/aluno/signup', function () {
     return view('user/aluno/signUp');
 });
 Route::post('/createaluno', [AlunoController::class, 'create']);
+Route::get('/aluno/account', function () {
+    return view('user.aluno.account');
+})->middleware(\App\Http\Middleware\Auth::class);
+Route::get('/aluno/mural', function () {
+    return view('user.aluno.mural');
+})->middleware(\App\Http\Middleware\Auth::class);
+Route::get('/aluno/list', function () {
+    return view('user.aluno.list');
+})->middleware(\App\Http\Middleware\Auth::class);
+Route::get('/aluno/chat', function () {
+    return view('user.aluno.chat');
+})->middleware(\App\Http\Middleware\Auth::class);
 
 
 // Professor
@@ -62,9 +74,25 @@ Route::get('/prof/signup', function () {
     return view('user/prof/signUp');
 });
 Route::post('/createprofessor', [ProfessorController::class, 'create']);
-Route::get('/teste', function () {
-    return view('teste');
-});
+Route::get('/prof/account', function () {
+    return view('user.prof.account');
+})->middleware(\App\Http\Middleware\Auth::class);
+
+Route::get('/prof/mural', function () {
+    return view('user.prof.mural');
+})->middleware(\App\Http\Middleware\Auth::class);
+
+Route::get('/prof/list', function () {
+    return view('user.prof.list');
+})->middleware(\App\Http\Middleware\Auth::class);
+Route::get('/prof/chat', function () {
+    return view('user.prof.chat');
+})->middleware(\App\Http\Middleware\Auth::class);
+
+Route::get('/prof/notas', function () {
+    return view('user.prof.notas');
+})->middleware(\App\Http\Middleware\Auth::class);
+
 
 // Admin
 Route::get('/admin', function () {

@@ -310,3 +310,41 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("mobile-menu").classList.toggle("hidden");
         });
 });
+
+/*---------------------------------------Modal-----------------------------------------------*/
+function iniciarJavaScript() {
+    // Selecione o botão que abre o modal
+    const botaoAbrirModal = document.querySelector(
+        '[data-modal-toggle="authentication-modal"]'
+    );
+
+    // Selecione o modal
+    const modal = document.getElementById("authentication-modal");
+
+    // Selecione o botão de fechar do modal
+    const botaoFecharModal = document.querySelector(
+        '[data-modal-hide="authentication-modal"]'
+    );
+
+    // Adicione um evento de clique no botão de abrir
+    botaoAbrirModal.addEventListener("click", () => {
+        // Remova a classe hidden do modal
+        modal.classList.remove("hidden");
+    });
+
+    // Adicione um evento de clique no botão de fechar
+    botaoFecharModal.addEventListener("click", () => {
+        // Volte a aplicar a classe hidden do modal
+        modal.classList.add("hidden");
+    });
+}
+const navbarLinks = document.querySelectorAll("#navbar a");
+
+navbarLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const targetId = link.getAttribute("href").replace("#", "");
+        const targetElement = document.getElementById(targetId);
+        targetElement.scrollIntoView({ behavior: "smooth" });
+    });
+});

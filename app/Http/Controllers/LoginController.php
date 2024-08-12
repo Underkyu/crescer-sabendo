@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Login;
+use Illuminate\Cookie\CookieJar;
 use App\Models\Professor;
 use App\Models\Ong;
 use App\Models\Responsavel;
@@ -29,8 +30,7 @@ class LoginController
 
             // Iniciar sessão para o professor
             Session::put('professor', $professor);
-            echo $professor;
-            return redirect('/ong/account');
+            return redirect('/prof/account');
         }
 
         if ($ong !== null && Hash::check($senha, $ong->Senha)) {
@@ -46,7 +46,7 @@ class LoginController
             $aluno = Aluno::where('Email', $email)->first();
             Session::put('responsavel', $responsavel);
             Session::put('aluno', $aluno);
-            return redirect('/teste');
+            return redirect('/aluno/account');
         }
 
         // Se nenhuma das condições for atendida
@@ -56,6 +56,7 @@ class LoginController
     {
         Session::flush();
         Auth::logout();
+        // Redirecionar para a página de login ou outra página de sua escolha
         return redirect('/');
     }
 }
