@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
@@ -13,53 +13,34 @@
     @vite('resources/css/app.css')
 
 </head>
-<script>
-    const navbarLinks = document.querySelectorAll('.navbar nav a');
 
-    navbarLinks.forEach((link) => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const targetId = link.getAttribute('href').replace('#', '');
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-</script>
 
 <body class="bg-gray-100 overflow-x-hidden margin-auto">
     <!-- Header  -->
-    <header class="bg-white ">
+    <header class="bg-white  ">
         <div class="flex items-center justify-between ">
             <div id="logo" class="flex items-center border bg-customYellow rounded-br-only">
                 <img src="{{ asset('images/logo.png') }}" alt="Logo" class=" pl-5 pb-2 pr-7 pt-1">
             </div>
 
             <nav id="navbar" class="hidden  md:flex items-center space-x-12 gap-14">
-                <a href="{{ url('/home')}}#home"
-                    class="text-customBlue  text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3 ">Home</a>
-                <a href="#aboutus"
-                    class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">Sobre
+                <a href="/"
+                    class="text-customBlue  text-2xl font-itim hover:text-yellow-600 hover:underline hover:pb-3 ">Home</a>
+                <a href="/#aboutus"
+                    class="text-customBlue text-2xl font-itim hover:text-yellow-600 hover:underline hover:pb-3">Sobre
                     nós</a>
-                <a href="#sponsors"
-                    class="text-customYellow text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">ONG's</a>
-                <a href="{{ url('/donates')}}#doacao"
-                    class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">Doações</a>
+                <a href="#"
+                    class="text-customYellow text-2xl font-itim hover:text-yellow-600 hover:underline hover:pb-3">ONG's</a>
+                <a href="#"
+                    class="text-customBlue text-2xl font-itim hover:text-yellow-600 hover:underline hover:pb-3">Doações</a>
                 <a href="#contactus"
-                    class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">Fale
+                    class="text-customBlue text-2xl font-itim hover:text-yellow-600 hover:underline hover:pb-3">Fale
                     Conosco</a>
-                <a href="{{ url('/teacher-profile')}}"
-                    class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">Teacher</a>
-                <a href="{{ url('/response-profile')}}"
-                    class="text-customBlue text-2xl font-itim hover:text-purple-900 hover:underline hover:pb-3">Respon</a>
+
             </nav>
 
             <div id="userAction" class="hidden md:flex items-center space-x-2 mr-3 ">
-                <a href="{{ url('/signin') }}" class="text-gray-600 hover:text-purple-900 ">
+                <a href="{{ url('/signin') }}" class="text-gray-600 hover:text-yellow-600 ">
                     <img id="userImg" class="h-10 mr-2" src="{{ asset('images/icons/userIconYellow.png') }}" alt="">
                 </a>
                 <a id="button" href="{{ url('/signup')}}"
@@ -67,9 +48,9 @@
                     up</a>
             </div>
 
-            <div id="mobile-nav" class="md:hidden mr-5 ">
+            <div id="mobile-nav" class="md:hidden ml-5 mr-5 ">
                 <button id="mobile-menu-toggle" class="focus:outline-none">
-                    <img class="h-10" src="{{ asset('images/icons/taskPurple.png') }}" alt="">
+                    <img class="h-10" src="{{ asset('images/icons/taskbarRed.png') }}" alt="">
                 </button>
             </div>
         </div>
@@ -77,17 +58,17 @@
 
         <div id="mobile-menu" class="hidden bg-white  py-2 px-4 ">
             <a href="{{ url('/home')}}#home"
-                class="text-purple-700 text-lg font-itim py-2  hover:text-purple-900">Home</a>
-            <a href="#aboutus" class="block text-customBlue text-lg font-itim py-2  hover:text-purple-900">Sobre nós</a>
-            <a href="#sponsors" class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">ONG's</a>
+                class="text-customYellow text-lg font-itim py-2  hover:text-yellow-600">Home</a>
+            <a href="#aboutus" class="block text-customBlue text-lg font-itim py-2  hover:text-yellow-600">Sobre nós</a>
+            <a href="#sponsors" class="block text-customBlue text-lg font-itim py-2 hover:text-yellow-600">ONG's</a>
             <a href="{{ url('/donates')}}#doacao"
-                class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">Doações</a>
-            <a href="#contactus" class="block text-customBlue text-lg font-itim py-2 hover:text-purple-900">Fale
+                class="block text-customBlue text-lg font-itim py-2 hover:text-yellow-600">Doações</a>
+            <a href="#contactus" class="block text-customBlue text-lg font-itim py-2 hover:text-yellow-600">Fale
                 Conosco</a>
             <a href="{{ url('/signin') }}"
-                class="block  text-customBlue text-lg font-itim py-2 hover:text-purple-900">Entrar</a>
+                class="block  text-customBlue text-lg font-itim py-2 hover:text-yellow-600">Entrar</a>
             <a href="{{ url('/signup')}}"
-                class="block  text-customBlue text-lg font-itim py-2 hover:text-purple-900">Registrar-se</a>
+                class="block  text-customBlue text-lg font-itim py-2 hover:text-yellow-600">Registrar-se</a>
         </div>
     </header>
     <!-- End Header -->
@@ -97,7 +78,7 @@
         class=" w-screen h-screen flex justify-center items-center bg-[url('/public/images/backContent-Yellow.png')] bg-no-repeat bg-cover overflow-hidden">
         <!-- Overlay Div -->
 
-        <div class="bg-white w-2/3 h-3/6 rounded-3xl shadow-2xl p-5">
+        <div class="bg-white w-dados mx-4 h-101 rounded-3xl shadow-2xl p-5">
             <div class="w-full h-full flex flex-col justify-center items-center">
                 <div class=" w-full flex flex-col p-4">
                     <h1 class="text-black text-2xl lg:text-6xl sm:text-5xl font-itim mb-4 text-center">Encontre ONGs que
@@ -110,7 +91,7 @@
                         da sua casa.</p>
                 </div>
                 <div class="flex items-center justify-center flex-col sm:flex-row  max-w-md mx-4">
-                    <label class="relative block w-full ">
+                    <label class="relative block w-full mb-4 md:mb-0">
                         <span class="sr-only">Search</span>
                         <span class="absolute inset-y-0 left-0 flex items-center pl-2">
                             <svg class="h-5 w-5 fill-slate-300" viewBox="0 0 50 40">
@@ -229,7 +210,7 @@
     <!-- END Divider Point -->
 
     <!--Rating-->
-    <div class="flex flex-col w-screen h-screen sm:w-full sm:h-full mb-20">
+    <div class="flex flex-col w-screen h-screen sm:w-full sm:h-full md:mb-20 mb-44">
         <div class=" my-14 mx-10 max-w-full">
             <p class="font-itim font-bold text-4xl">ONGs que priorizam a inclusão</p>
         </div>
@@ -314,8 +295,8 @@
         class="relative w-full h-screen flex flex-col sm:flex-row items-center justify-center bg-[url('/public/images/backContent-Yellow2.png')] bg-no-repeat bg-cover bg-center  ">
         <!-- Texto e Botão -->
         <div
-            class="w-full sm:w-1/2 flex flex-col justify-center items-center text-center sm:text-left sm:items-center mb-8 sm:mb-0">
-            <h1 class="text-4xl sm:text-6xl md:text-8xl font-itim text-black mb-4">É uma ONG?</h1>
+            class="w-full mt-5 sm:w-1/2 flex flex-col justify-center items-center text-center sm:text-left sm:items-center mb-8 sm:mb-0">
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-itim text-black mb-4 ">É uma ONG?</h1>
             <p class=" sm:text-4xl font-serif text-black mb-4">
                 Junte-se a nós na<br>
                 missão de<br>
@@ -463,7 +444,7 @@
     <!--end Partner-->
 
     <!--Call with US -->
-    <div id="#contactus" class="flex flex-col sm:flex-row my-20 w-screen h-full">
+    <div id="   contactus" class="flex flex-col sm:flex-row my-20 w-screen h-full">
         <!-- Text -->
         <div class=" w-full h-full sm:w-1/2 flex justify-center items-center ">
             <div class="w-2/3">
