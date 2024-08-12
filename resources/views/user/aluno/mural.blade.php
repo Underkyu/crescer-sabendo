@@ -22,7 +22,7 @@
                 <p id="plogo" class="text-white font-itim text-5xl">Meu Perfil</p>
             </div>
             <nav id="navbar" class="hidden md:flex items-center space-x-12 gap-14">
-                <a href="#" class="text-customRed text-2xl font-itim hover:text-red-700 hover:underline hover:pb-3">Meus Dados</a>
+                <a href="/aluno/account" class="text-customRed text-2xl font-itim hover:text-red-700 hover:underline hover:pb-3">Meus Dados</a>
                 <a href="/aluno/mural" class="text-customBlue text-2xl font-itim hover:text-red-700 hover:underline hover:pb-3">Mural</a>
                 <a href="/aluno/chat" class="text-customBlue text-2xl font-itim hover:text-red-700 hover:underline hover:pb-3">Chat</a>
             </nav>
@@ -38,7 +38,7 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden bg-white py-2 px-4">
-            <a href="3" class="block text-customRed text-lg font-itim py-1 hover:text-customRed">Meus Dados</a>
+            <a href="#" class="block text-customRed text-lg font-itim py-1 hover:text-customRed">Meus Dados</a>
             <a href="/aluno/mural" class="text-customBlue text-lg font-itim hover:text-customRed">Mural</a>
             <a href="/aluno/chat" class="block text-customBlue text-lg font-itim py-1 hover:text-customRed">Chat</a>
         </div>
