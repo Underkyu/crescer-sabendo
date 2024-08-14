@@ -110,6 +110,95 @@
 
             </div>
         </div>
+
+        <section class="bg-red-600 py-3">
+
+        </section>
+        <!-- Ajuda  -->
+        <section class="bg-white py-10">
+            <div class="container mx-auto text-center">
+                <h3 class="text-xl font-bold mb-4">Escolha abaixo forma pela qual deseja ajudar a ONG!</h3>
+                <div class="flex flex-wrap justify-center gap-4">
+
+                    <div class="border-solid border-2 border-red-500 p-6 rounded-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                        <p class="text-sm m-5">Contribua para o futuro da nossa ONG fazendo uma doação financeira e nos ajude a continuar com o nosso trabalho.</p>
+                        <a href="#_" class="inline-block py-1 text-xs text-white bg-red-500 px-8 hover:bg-red-600 rounded-lg">Doar</a>
+                    </div>
+
+                    <div class="border-solid border-2 border-red-500 p-6 rounded-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                        <p class="text-sm m-3">Se você prefere fazer doações de materiais ou alimentos, ficaremos muito gratos! Entre em contato conosco pelo nosso e-mail para mais detalhes.</p>
+                        <a href="#_" class="inline-block py-1 text-xs text-white bg-red-500 px-8 hover:bg-red-600 rounded-lg">Mandar E-mail</a>
+                    </div>
+
+                    <div class="border-solid border-2 border-red-500 p-6 rounded-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                        <p class="text-sm m-3">Junte-se a nós como voluntário e faça a diferença! Existem diversas áreas dentro da nossa ONG onde você pode oferecer sua ajuda e transformar vidas.</p>
+                        <a href="#_" class="inline-block py-1 text-xs text-white bg-red-500 px-8 hover:bg-red-600 rounded-lg">Voluntariar-se</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </section>
+
+        <!-- Cursos e Professores Section -->
+        <section class="bg-gray-200 py-10">
+            <div class="container mx-auto flex flex-col lg:flex-row lg:space-x-8">
+                <!-- Cursos Ofertados -->
+                <div class="w-full lg:w-2/3 bg-white p-6 rounded-lg shadow-lg">
+                    <h4 class="text-xl font-bold mb-4">Cursos Ofertados</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+                        <div class="bg-gray-300 p-4 rounded-lg">Imagem do Curso</div>
+                        <div class="bg-gray-300 p-4 rounded-lg">Imagem do Curso</div>
+                        <div class="bg-gray-300 p-4 rounded-lg">Imagem do Curso</div>
+                        <div class="bg-gray-300 p-4 rounded-lg">Imagem do Curso</div>
+                        <div class="bg-gray-300 p-4 rounded-lg">Imagem do Curso</div>
+                        <div class="bg-gray-300 p-4 rounded-lg">Imagem do Curso</div>
+                        <div class="bg-gray-300 p-4 rounded-lg">Imagem do Curso</div>
+                        <div class="bg-gray-300 p-4 rounded-lg">Imagem do Curso</div>
+                        <div class="bg-gray-300 p-4 rounded-lg">Imagem do Curso</div>
+                    </div>
+                </div>
+
+                <!-- Professores -->
+                <div class="w-full lg:w-1/3 bg-white p-6 rounded-lg shadow-lg mt-6 lg:mt-0">
+                    <h4 class="text-xl font-bold mb-4">Professores</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <img src="path/to/professor.png" alt="Professor" class="w-10 h-10 rounded-full">
+                            <span class="ml-4">Nome XXXXXXXXX</span>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="path/to/professor.png" alt="Professor" class="w-10 h-10 rounded-full">
+                            <span class="ml-4">Nome XXXXXXXXX</span>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="path/to/professor.png" alt="Professor" class="w-10 h-10 rounded-full">
+                            <span class="ml-4">Nome XXXXXXXXX</span>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="path/to/professor.png" alt="Professor" class="w-10 h-10 rounded-full">
+                            <span class="ml-4">Nome XXXXXXXXX</span>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="path/to/professor.png" alt="Professor" class="w-10 h-10 rounded-full">
+                            <span class="ml-4">Nome XXXXXXXXX</span>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="path/to/professor.png" alt="Professor" class="w-10 h-10 rounded-full">
+                            <span class="ml-4">Nome XXXXXXXXX</span>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="path/to/professor.png" alt="Professor" class="w-10 h-10 rounded-full">
+                            <span class="ml-4">Nome XXXXXXXXX</span>
+                        </li>
+                        <li class="flex items-center">
+                            <img src="path/to/professor.png" alt="Professor" class="w-10 h-10 rounded-full">
+                            <span class="ml-4">Nome XXXXXXXXX</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 </body>
 
 </html>
