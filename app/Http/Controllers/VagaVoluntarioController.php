@@ -21,28 +21,34 @@ class VagaVoluntarioController
      */
     public function create(Request $req)
     {
-        /*$validator = Validator::make($req->all(), [
-            'Nome' => 'required|string|max:255',
-            'CPF' => 'required|string|size:14|unique:professores,cpf',
-            'Nascimento' => 'required|date',
-            'Telefone' => 'nullable|string|max:15',
-            'Formacao' => 'nullable|string|max:255',
-            'Email' => 'required|email|unique:professores,email',
-            'Senha' => 'required|string|min:8',
-            'C_Senha' => 'required|string|same:Senha',
+        $validator = Validator::make($req->all(), [
+            'name-ar' => 'required|string|max:255',
+            'tel-cont' => 'required|string|size:15',
+            'email' => 'required|email',
+            'cidade' => 'required|string|max:50',
+            'voluntarios' => 'required|string|max:255',
+            'day' => 'required|string|max:50',
+            'hour' => 'required|string|max:25',
         ], [
-            'Nome.required' => 'O campo nome deve ser preenchido',
-            'CPF.required' => 'O campo CPF deve ser preenchido',
-            'CPF.size' => 'O campo CPF deve ter exatamente :size caracteres',
-            'Nascimento.required' => 'O campo data de nascimento deve ser preenchido',
-            'Email.required' => 'O campo email deve ser preenchido',
-            'Email.email' => 'O campo email deve ser um endereço de e-mail válido',
-            'Email.unique' => 'O e-mail informado já está em uso',
-            'Senha.required' => 'O campo senha deve ser preenchido',
-            'Senha.min' => 'A senha deve ter pelo menos :min caracteres',
-            'C_Senha.required' => 'O campo confirmação de senha deve ser preenchido',
-            'C_Senha.same' => 'A confirmação da senha não coincide com a senha',
-        ]); */
+            'name-ar.required' => 'O campo nome da área deve ser preenchido',
+            'nome-ar.max' => 'O campo nome da área deve ter no máximo :max caracteres',
+            'tel-cont.required' => 'O campo telefone para contato deve ser preenchido',
+            'tel-cont.size' => 'O campo telefone deve ter exatamente :size caracteres',
+            'email.required' => 'O campo email para contato deve ser preenchido',
+            'email.email' => 'O campo email para contato deve ser um endereço de e-mail válido',
+            'email.max' => 'O campo para contato deve ter no máximo :max caracteres',
+            'cidade.required' => 'O campo cidade deve ser preenchido',
+            'cidade.max' => 'O campo cidade deve ter no máximo :max caracteres',
+            'voluntarios.required' => 'O campo voluntários desejados deve ser preenchido',
+            'voluntarios.max' => 'O campo voluntários desejados deve ter no máximo :max caracteres',
+            'day.required' => 'O campo dias da semana deve ser preenchido',
+            'day.max' => 'O campo dias da semana deve ter no máximo :max caracteres',
+            'hour.required' => 'O campo horário deve ser preenchido',
+            'hour.max' => 'O campo horário deve ter no máximo :max caracteres',
+
+        ]);
+
+        if ($validator->fails()) return redirect()->back()->withErrors($validator)->withInput();
 
         $vaga = new VagaVoluntario();
 
