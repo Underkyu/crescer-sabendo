@@ -91,7 +91,7 @@
 
     <div class="flex items-center justify-center">
         <div class="w-full max-w-5xl rounded-xl bg-gray-100 py-6 px-4 sm:px-8 items-center justify-center mt-20">
-            <form method="" action="">
+            <form action="/createvolunteer" method="post">
                 @csrf
                 <div class="flex flex-col">
                     <div class="w-full flex flex-col h-full">

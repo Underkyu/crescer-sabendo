@@ -20,8 +20,8 @@ return new class extends Migration
             $table->text('Sobre')->nullable();
             $table->string('Dias')->nullable();
             $table->time('Horario')->nullable();
-            $table->unsignedInteger('Id_Curso')->nullable();
-            $table->foreign('Id_Curso')->references('Id_Curso')->on('cursos');
+            $table->unsignedInteger('Id_Ong')->nullable();
+            $table->foreign('Id_Ong')->references('Id_Ong')->on('ongs');
             $table->timestamps();
         });
     }

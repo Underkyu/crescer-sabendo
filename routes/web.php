@@ -45,10 +45,10 @@ Route::get('/ong/courses', function () {
 Route::get('/ong/mural', function () {
     return view('user/ong/mural');
 })->middleware(\App\Http\Middleware\Auth::class);
+Route::post('/createvolunteer', [VagaVoluntarioController::class, 'create']);
 Route::get('/ong/volunteer', function () {
     return view('user/ong/volunteer');
 })->middleware(\App\Http\Middleware\Auth::class);
-
 
 // Aluno
 Route::get('/aluno/signup', function () {
