@@ -338,13 +338,4 @@ function iniciarJavaScript() {
         modal.classList.add("hidden");
     });
 }
-const navbarLinks = document.querySelectorAll("#navbar a");
 
-navbarLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-        event.preventDefault();
-        const targetId = link.getAttribute("href").replace("#", "");
-        const targetElement = document.getElementById(targetId);
-        targetElement.scrollIntoView({ behavior: "smooth" });
-    });
-});
