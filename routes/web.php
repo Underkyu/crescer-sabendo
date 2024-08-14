@@ -37,8 +37,10 @@ Route::get('/ong/signup', function () {
     return view('user/ong/signUp');
 });
 Route::get('/ong/account', function () {
-    return view('user/ong/account');
+    return view('user.ong.account');
 })->middleware(\App\Http\Middleware\Auth::class);
+Route::post('/createong', [OngController::class, 'create']);
+
 Route::get('/ong/courses', function () {
     return view('user/ong/courses');
 })->middleware(\App\Http\Middleware\Auth::class);

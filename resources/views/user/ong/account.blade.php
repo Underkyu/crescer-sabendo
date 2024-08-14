@@ -88,18 +88,18 @@
             <div class="w-full h-[250px]">
                 <img src="https://vojislavd.com/ta-template-demo/assets/img/profile-background.jpg" class="w-full h-full rounded-tl-lg rounded-tr-lg">
             </div>
-            <div class="flex flex-col ml-20 -mt-20">
-                <img src="https://vojislavd.com/ta-template-demo/assets/img/profile.jpg" class="w-40 border-4 border-white rounded-full">
+            <div class="flex items-center flex-col ">
+                
                 @php
-                $professor = Session::get('professor');
+                $ong = Session::get('ong');
                 @endphp
-                <div class="flex items-start space-x-2 mt-2">
-                    @if($professor)
-                    <p class="text-2xl">{{$professor->Nome}}</p>
+                <div class="flex items-center space-x-2 mt-10 ">
+                    @if($ong)
+                    <img src="{{ asset('storage/' . $ong->Endereco) }}">
+                    <p class="text-2xl">{{$ong->Nome}}</p>
                 </div>
 
-                <p class="text-xl">{{$professor->Email}}</p>
-                <p class=" text-xl">{{$professor->Telefone}}</p>
+                
                 @else
                 <p class="text-xl">Não há professor</p>
                 @endif
@@ -141,7 +141,7 @@
         </section>
 
         <!-- Cursos e Professores Section -->
-        <section class="bg-gray-200 py-10">
+        <section class=" py-10">
             <div class="container mx-auto flex flex-col lg:flex-row lg:space-x-8">
                 <!-- Cursos Ofertados -->
                 <div class="w-full lg:w-2/3 bg-white p-6 rounded-lg shadow-lg">

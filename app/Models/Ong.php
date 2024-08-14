@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Ong extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'Nome',
+        'CNPJ',
+        'Responsavel',
+        'Endereco',
+        'CEP',
+        'Estado',
+        'Cidade',
+        'Complemento',
+        'Telefone',
+        'Linkdoacao',
+        'Sobre',
+        'Email',
+        'Senha',
+    ];
 }

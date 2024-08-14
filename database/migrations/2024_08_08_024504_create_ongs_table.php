@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('Nome');
             $table->string('CNPJ', 18)->nullable();
             $table->string('Responsavel')->nullable();
-            $table->string('CPF', 11)->nullable();
             $table->string('Endereco')->nullable();
             $table->string('CEP', 10)->nullable();
             $table->string('Estado', 2)->nullable();

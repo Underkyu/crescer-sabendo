@@ -45,7 +45,7 @@
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Telefone</label>
-                    <input type="text" required  maxlength="13" name="Telefone" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
+                    <input type="text" required maxlength="13" name="Telefone" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Informe sua formação</label>
@@ -64,16 +64,17 @@
                     <input type="text" required name="C_Senha" class="w-full p-2 rounded-xl border-2 border-purple-900 h-12 focus:outline-none">
                 </div>
                 <button type="submit" class="w-full bg-purple-900 text-white p-2 rounded-xl text-lg font-semibold hover:bg-purple-700">Cadastrar-se</button>
+                @if ($errors->any())
+                <div class="mt-4">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li class="text-red-500">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
             </form>
-            @if ($errors->any())
-            <div class="mt-4">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                    <li class="text-red-500">{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
+
         </div>
         <img src="{{ asset('images/signInBack.png') }}" alt="Background" class="absolute inset-0 w-full h-full  z-0">
     </div>
